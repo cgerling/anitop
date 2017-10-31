@@ -1,0 +1,53 @@
+DROP DATABASE IF EXISTS anitop;
+CREATE DATABASE anitop;
+
+USE anitop;
+
+CREATE TABLE Anime (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(200) NOT NULL UNIQUE,
+    season_release DATE NOT NULL,
+    description TEXT NOT NULL,
+    author VARCHAR(200) NOT NULL,
+    publisher VARCHAR(200) NOT NULL
+);
+
+CREATE TABLE Genre (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL UNIQUE
+);
+
+CREATE TABLE AnimeGenre (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    anime INT NOT NULL UNIQUE,
+    genre INT NOT NULL,
+    
+    FOREIGN KEY(anime) REFERENCES Anime(id),
+    FOREIGN KEY(genre) REFERENCES Genre(id)
+);
+
+CREATE TABLE Status (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL UNIQUE,
+    description VARCHAR(200) NOT NULL UNIQUE
+);
+
+CREATE TABLE User (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(200) NOT NULL,
+    email VARCHAR(250) NOT NULL UNIQUE,
+    password VARCHAR(200) NOT NULL UNIQUE,
+    birth DATE NOT NULL
+);
+
+CREATE TABLE Watchlist (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    user INT NOT NULL,
+    anime INT NOT NULL,
+    status INT NOT NULL,
+    active BOOLEAN NOT NULL,
+    
+    FOREIGN KEY(user) REFERENCES User(id),
+    FOREIGN KEY(anime) REFERENCES Anime(id),
+    FOREIGN KEY(status) REFERENCES Status(id)
+);
