@@ -5,7 +5,7 @@ class Database {
     private $database;
     private $host;
 
-    public function __constructor($database, $host) {
+    public function __construct($database, $host) {
         $this->database = $database;
         $this->host = $host;
     }
