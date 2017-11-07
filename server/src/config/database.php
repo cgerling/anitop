@@ -11,7 +11,7 @@ class Database {
     }
 
     public function connect($dbname, $user, $passwd) {
-        $connectionString = $this->database.":host".$this->host.";dbname=".$dbname;
+        $connectionString = $this->database.":host=".$this->host.";dbname=".$dbname;
 
         return new PDO($connectionString, $user, $passwd);
     }
