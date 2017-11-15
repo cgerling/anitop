@@ -1,7 +1,9 @@
 <?php
-require_once "adapter/GenreAdapter.php";
-require_once "utils/QueryManager.php";
 namespace Anitop\PDO;
+
+use Anitop\Utils\QueryManager;
+use Anitop\Entity\Genre;
+use Anitop\Adapter\GenreAdapter;
 
 class GenrePDO {
     private $table;

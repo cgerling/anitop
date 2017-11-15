@@ -1,9 +1,9 @@
 <?php
 namespace Anitop\PDO;
 
-require_once "utils/QueryManager.php";
-require_once "entity/Status.php";
-require_once "adapter/StatusAdapter.php";
+use Anitop\Utils\QueryManager;
+use Anitop\Entity\Status;
+use Anitop\Adapter\StatusAdapter;
 
 class StatusPDO {
     private $table;

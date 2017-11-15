@@ -1,6 +1,7 @@
 <?php
-require_once "config/BaseConnection.php";
 namespace Anitop\Utils;
+
+use Anitop\Config\BaseConnection;
 
 class QueryManager {
     private $table;

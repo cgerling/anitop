@@ -1,9 +1,9 @@
 <?php
 namespace Anitop\PDO;
 
-require_once "utils/QueryManager.php";
-require_once "entity/User.php";
-require_once "adapter/UserAdapter.php";
+use Anitop\Utils\QueryManager;
+use Anitop\Entity\User;
+use Anitop\Adapter\UserAdapter;
 
 class UserPDO {
     private $table;

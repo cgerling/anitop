@@ -1,5 +1,4 @@
 <?php
-require_once "Entity.php";
 namespace Anitop\Entity;
 
 class Genre extends Entity {

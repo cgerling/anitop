@@ -1,7 +1,7 @@
 <?php
-require_once "iAdapter.php";
-require_once "entity/Genre.php";
 namespace Anitop\Adapter;
+
+use Anitop\Entity\Genre;
 
 class GenreAdapter implements iAdapter {
 
