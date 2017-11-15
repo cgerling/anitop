@@ -1,6 +1,9 @@
 {
     "name": "anitop-server",
     "description": "WebAPI of Anitop WebApp",
+    "scripts": {
+      "start:dev": "php -S localhost:8080 -t src/"
+    },
     "require": {
         "slim/slim": "^3.7"
     }
