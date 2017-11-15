@@ -1,5 +1,5 @@
 <?php
-require_once "BaseConnection.php";
+require_once "config/BaseConnection.php";
 
 class QueryManager {
     private $table;
