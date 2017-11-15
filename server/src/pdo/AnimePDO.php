@@ -1,6 +1,6 @@
 <?php
 
-require_once "QueryManager.php";
+require_once "utils/QueryManager.php";
 require_once "entity/Anime.php";
 require_once "adapter/AnimeAdapter.php";
 

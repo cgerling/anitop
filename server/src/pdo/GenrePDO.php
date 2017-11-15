@@ -1,5 +1,6 @@
 <?php
 require_once "adapter/GenreAdapter.php";
+require_once "utils/QueryManager.php";
 
 class GenrePDO {
     private $table;

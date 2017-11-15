@@ -1,6 +1,6 @@
 <?php
 
-require_once "QueryManager.php";
+require_once "utils/QueryManager.php";
 require_once "entity/User.php";
 require_once "adapter/UserAdapter.php";
 
