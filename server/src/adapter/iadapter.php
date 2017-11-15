@@ -21,5 +21,5 @@ interface iAdapter {
      * @param $anime
      * @return array
      */
-    public function toMap($anime): array;
+    public function toMap($entity): array;
 }
