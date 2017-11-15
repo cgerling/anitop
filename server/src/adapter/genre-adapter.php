@@ -1,6 +1,6 @@
 <?php
 require_once "iadapter.php";
-require_once "entities/genre.php";
+require_once "entity/genre.php";
 
 class GenreAdapter implements iAdapter {
 

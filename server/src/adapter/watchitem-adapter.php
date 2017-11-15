@@ -3,7 +3,7 @@ require_once "adapter/iadapter.php";
 require_once "adapter/anime-adapter.php";
 require_once "adapter/user-adapter.php";
 require_once "adapter/status-adapter";
-require_once "entities/watchitem.php";
+require_once "entity/watchitem.php";
 
 class WatchitemAdapter implements iAdapter {
     private $animeAdapter;

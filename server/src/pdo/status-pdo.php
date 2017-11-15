@@ -1,7 +1,7 @@
 <?php
 
 require_once "query-manager.php";
-require_once "entities/status.php";
+require_once "entity/status.php";
 require_once "adapter/status-adapter.php";
 
 class StatusPDO {

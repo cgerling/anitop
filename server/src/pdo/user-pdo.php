@@ -1,7 +1,7 @@
 <?php
 
 require_once "query-manager.php";
-require_once "entities/user.php";
+require_once "entity/user.php";
 require_once "adapter/user-adapter.php";
 
 class UserPDO {

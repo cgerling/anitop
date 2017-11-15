@@ -1,7 +1,7 @@
 <?php
 
 require_once "query-manager.php";
-require_once "entities/anime.php";
+require_once "entity/anime.php";
 require_once "adapter/anime-adapter.php";
 
 class AnimePDO {

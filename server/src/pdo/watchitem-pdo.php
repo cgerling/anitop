@@ -1,7 +1,7 @@
 <?php
 
 require_once "query-manager.php";
-require_once "entities/watchitem.php";
+require_once "entity/watchitem.php";
 require_once "adapter/watchitem-adapter.php";
 
 class WatchitemPDO {
