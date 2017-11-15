@@ -1,5 +1,5 @@
 <?php
-require_once "./entity.php";
+require_once "entity.php";
 
 class Anime extends Entity {
     private $name;

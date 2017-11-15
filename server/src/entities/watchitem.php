@@ -1,8 +1,8 @@
 <?php
-require_once "./entity.php";
-require_once "./anime.php";
-require_once "./user.php";
-require_once "./status.php";
+require_once "entity.php";
+require_once "anime.php";
+require_once "user.php";
+require_once "status.php";
 
 class Watchitem extends Entity {
 
