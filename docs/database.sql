@@ -3,51 +3,51 @@ CREATE DATABASE anitop;
 
 USE anitop;
 
-CREATE TABLE Anime (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE anime (
+    animeid INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(200) NOT NULL UNIQUE,
-    season_release DATE NOT NULL,
+    seasonRelease DATE NOT NULL,
     description TEXT NOT NULL,
     author VARCHAR(200) NOT NULL,
     publisher VARCHAR(200) NOT NULL
 );
 
-CREATE TABLE Genre (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE genre (
+    genreid INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL UNIQUE
 );
 
-CREATE TABLE AnimeGenre (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE animegenre (
+    animegenreid INT PRIMARY KEY AUTO_INCREMENT,
     anime INT NOT NULL UNIQUE,
     genre INT NOT NULL,
     
-    FOREIGN KEY(anime) REFERENCES Anime(id),
-    FOREIGN KEY(genre) REFERENCES Genre(id)
+    FOREIGN KEY(anime) REFERENCES anime(id),
+    FOREIGN KEY(genre) REFERENCES genre(id)
 );
 
-CREATE TABLE Status (
+CREATE TABLE status (
     id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL UNIQUE,
     description VARCHAR(200) NOT NULL UNIQUE
 );
 
-CREATE TABLE User (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE user (
+    userid INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(200) NOT NULL,
     email VARCHAR(250) NOT NULL UNIQUE,
     password VARCHAR(200) NOT NULL UNIQUE,
     birth DATE NOT NULL
 );
 
-CREATE TABLE Watchlist (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE watchlist (
+    watchlistid INT PRIMARY KEY AUTO_INCREMENT,
     user INT NOT NULL,
     anime INT NOT NULL,
     status INT NOT NULL,
     active BOOLEAN NOT NULL,
     
-    FOREIGN KEY(user) REFERENCES User(id),
-    FOREIGN KEY(anime) REFERENCES Anime(id),
-    FOREIGN KEY(status) REFERENCES Status(id)
+    FOREIGN KEY(user) REFERENCES user(id),
+    FOREIGN KEY(anime) REFERENCES anime(id),
+    FOREIGN KEY(status) REFERENCES status(id)
 );
