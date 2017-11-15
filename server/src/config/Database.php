@@ -1,4 +1,5 @@
 <?php
+namespace Anitop\Config;
 
 class Database {
 

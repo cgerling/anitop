@@ -1,6 +1,7 @@
 <?php
 
 require_once "config/Database.php";
+namespace Anitop\Config;
 
 class BaseConnection {
     private $connection;
