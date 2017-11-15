@@ -1,5 +1,6 @@
 <?php
 require_once "Entity.php";
+namespace Anitop\Entity;
 
 class User extends Entity {
     public $name;

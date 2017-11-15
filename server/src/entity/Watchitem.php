@@ -3,6 +3,7 @@ require_once "Entity.php";
 require_once "Anime.php";
 require_once "User.php";
 require_once "Status.php";
+namespace Anitop\Entity;
 
 class Watchitem extends Entity {
 

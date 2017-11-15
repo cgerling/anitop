@@ -1,5 +1,6 @@
 <?php
 require_once "Status.php";
+namespace Anitop\Entity;
 
 class Status extends Entity {
     public $name;
