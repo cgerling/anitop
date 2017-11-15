@@ -1,4 +1,5 @@
 <?php
+namespace Anitop\Adapter;
 
 interface iAdapter {
 

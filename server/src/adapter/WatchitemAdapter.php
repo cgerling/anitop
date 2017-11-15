@@ -4,6 +4,7 @@ require_once "adapter/AnimeAdapter.php";
 require_once "adapter/UserAdapter.php";
 require_once "adapter/status-adapter";
 require_once "entity/Watchitem.php";
+namespace Anitop\Adapter;
 
 class WatchitemAdapter implements iAdapter {
     private $animeAdapter;

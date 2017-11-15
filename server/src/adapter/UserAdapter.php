@@ -2,6 +2,7 @@
 require_once "adapter/iAdapter.php";
 require_once "entity/User.php";
 require_once "service/DateTimeService.php";
+namespace Anitop\Adapter;
 
 class UserAdapter implements iAdapter {
 
