@@ -88,7 +88,7 @@ class AnimePDO {
 
     public function delete(Anime $anime) {
         $filter = array(
-            0 => "anime.id = {$anime->getId()}"
+            0 => "anime.animeid = {$anime->id}"
         );
 
         $this->query->delete($filter);
