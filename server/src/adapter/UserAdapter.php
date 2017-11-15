@@ -1,7 +1,7 @@
 <?php
-require_once "adapter/iadapter.php";
-require_once "entity/user.php";
-require_once "service/date-time-service.php";
+require_once "adapter/iAdapter.php";
+require_once "entity/User.php";
+require_once "service/DateTimeService.php";
 
 class UserAdapter implements iAdapter {
 

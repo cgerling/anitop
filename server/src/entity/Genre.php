@@ -1,5 +1,5 @@
 <?php
-require_once "entity.php";
+require_once "Entity.php";
 
 class Genre extends Entity {
     private $name;

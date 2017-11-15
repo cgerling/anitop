@@ -1,5 +1,5 @@
 <?php
-require_once "adapter/genre-adapter.php";
+require_once "adapter/GenreAdapter.php";
 
 class GenrePDO {
     private $table;

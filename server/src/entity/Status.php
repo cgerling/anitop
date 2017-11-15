@@ -1,5 +1,5 @@
 <?php
-require_once "status.php";
+require_once "Status.php";
 
 class Status extends Entity {
     public $name;

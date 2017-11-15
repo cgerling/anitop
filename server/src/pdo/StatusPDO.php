@@ -1,8 +1,8 @@
 <?php
 
-require_once "query-manager.php";
-require_once "entity/status.php";
-require_once "adapter/status-adapter.php";
+require_once "QueryManager.php";
+require_once "entity/Status.php";
+require_once "adapter/StatusAdapter.php";
 
 class StatusPDO {
     private $table;

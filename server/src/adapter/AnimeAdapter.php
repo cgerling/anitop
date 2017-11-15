@@ -1,7 +1,7 @@
 <?php
-require_once "adapter/iadapter.php";
-require_once "entity/anime.php";
-require_once "service/date-time-service.php";
+require_once "adapter/iAdapter.php";
+require_once "entity/Anime.php";
+require_once "service/DateTimeService.php";
 
 class AnimeAdapter implements iAdapter {
 

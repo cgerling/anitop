@@ -1,9 +1,9 @@
 <?php
-require_once "adapter/iadapter.php";
-require_once "adapter/anime-adapter.php";
-require_once "adapter/user-adapter.php";
+require_once "adapter/iAdapter.php";
+require_once "adapter/AnimeAdapter.php";
+require_once "adapter/UserAdapter.php";
 require_once "adapter/status-adapter";
-require_once "entity/watchitem.php";
+require_once "entity/Watchitem.php";
 
 class WatchitemAdapter implements iAdapter {
     private $animeAdapter;

@@ -1,8 +1,8 @@
 <?php
 
-require_once "query-manager.php";
-require_once "entity/anime.php";
-require_once "adapter/anime-adapter.php";
+require_once "QueryManager.php";
+require_once "entity/Anime.php";
+require_once "adapter/AnimeAdapter.php";
 
 class AnimePDO {
     private $table;

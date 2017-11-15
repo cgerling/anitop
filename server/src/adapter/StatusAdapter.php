@@ -1,7 +1,7 @@
 <?php
 
-require_once "adapter/iadapter.php";
-require_once "entity/status.php";
+require_once "adapter/iAdapter.php";
+require_once "entity/Status.php";
 
 class StatusAdapter implements iAdapter {
 

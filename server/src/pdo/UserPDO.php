@@ -1,8 +1,8 @@
 <?php
 
-require_once "query-manager.php";
-require_once "entity/user.php";
-require_once "adapter/user-adapter.php";
+require_once "QueryManager.php";
+require_once "entity/User.php";
+require_once "adapter/UserAdapter.php";
 
 class UserPDO {
     private $table;

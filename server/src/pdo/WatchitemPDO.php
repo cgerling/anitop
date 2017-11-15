@@ -1,8 +1,8 @@
 <?php
 
-require_once "query-manager.php";
-require_once "entity/watchitem.php";
-require_once "adapter/watchitem-adapter.php";
+require_once "QueryManager.php";
+require_once "entity/Watchitem.php";
+require_once "adapter/WatchitemAdapter.php";
 
 class WatchitemPDO {
     private $table;
