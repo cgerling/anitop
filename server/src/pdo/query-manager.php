@@ -10,23 +10,37 @@ class QueryManager {
         $this->table = $table;
     }
 
-    public function select($joinTables = array(), $whereStatement = array()) {
-        $query = "SELECT * FROM {$this->table}".$this->filter($whereStatement).$this->mountInnerJoin($joinTables);
+    public function selectOne($joinTables = array(), $whereStatement = array()) {
+        $query = "SELECT * FROM {$this->table}".$this->mountInnerJoin($joinTables).$this->filter($whereStatement);
         $stmt = $this->createStatement($query);
 
-        return $stmt->execute();
+        $stmt->execute();
+
+        return $stmt->fetch();
     }
 
-    public function selectAll() {
-        $query = "SELECT * FROM {$this->table}";
+    public function select($joinTables = array(), $whereStatement = array()) {
+        $query = "SELECT * FROM {$this->table}".$this->mountInnerJoin($joinTables).$this->filter($whereStatement);
         $stmt = $this->createStatement($query);
 
-        return $stmt->execute();
+        $stmt->execute();
+
+        return $stmt->fetchAll();
+    }
+
+    public function selectAll($join) {
+        $query = "SELECT * FROM {$this->table}".$this->mountInnerJoin($join);
+        $stmt = $this->createStatement($query);
+
+        $stmt->execute();
+
+        return $stmt->fetchAll();
     }
 
     public function insert($fieldValues) {
         $fields = join(",", array_keys($fieldValues));
-        $values = array_fill(0, count($fieldValues), "?");
+        $bindValues = array_fill(0, count($fieldValues), "?");
+        $values = join(",", $bindValues);
 
         $query = "INSERT INTO {$this->table}({$fields}) VALUES ({$values})";
 
@@ -34,7 +48,7 @@ class QueryManager {
 
         $stmt = $this->bindParams($stmt, $fieldValues);
 
-        return $stmt->execute();
+        $stmt->execute();
     }
 
     public function update($fieldValues, $whereStatement = array()) {
@@ -45,8 +59,8 @@ class QueryManager {
         
         $stmt = $this->createStatement($query);
         $stmt = $this->bindParams($stmt, $fieldValues);
-        
-        return $stmt->execute();
+
+        $stmt->execute();
     }
 
     public function delete($where = array()) {
@@ -64,10 +78,10 @@ class QueryManager {
         return $this->connection->get()->prepare($query);
     }
 
-    private function bindParams($stmt, $values, $startIndex = 1) {
+    private function bindParams(PDOStatement $stmt, $values, $startIndex = 1) {
         foreach(array_values($values) as $key=>$value) {
             $index = $startIndex + $key;
-            $stmt->bindParam($index, $value);
+            $stmt->bindValue($index, $value);
         }
 
         return $stmt;
@@ -78,7 +92,7 @@ class QueryManager {
         $keyValue = array();
 
         for($i = 0; $i < $lowestIndex; $i++) {
-            $keyValue = "{$fields[$i]} = {$values[$i]}";
+            $keyValue[] = "{$fields[$i]} = {$values[$i]}";
         }
 
         return $keyValue;
@@ -93,8 +107,8 @@ class QueryManager {
         return $where;
     }
 
-    private function innerJoin($table, $column, $sourceColumn) {
-        $query = " INNER JOIN {$table} ON {$this->table}.{$sourceColumn} = {$table}.{$column}";
+    private function innerJoin($table, $column, $sourceTable, $sourceColumn) {
+        $query = " INNER JOIN {$table} ON {$sourceTable}.{$sourceColumn} = {$table}.{$column}";
 
         return $query;
     }
@@ -102,7 +116,8 @@ class QueryManager {
     private function mountInnerJoin($joins) {
         $joinQuery = "";
         foreach($joins as $value) {
-            $joinQuery .= $this->innerJoin($value['table'], $value['targetColumn'], $value['column']);
+            $table = $value['sourceTable'] ?? $this->table;
+            $joinQuery .= $this->innerJoin($value['targetTable'], $value['targetColumn'], $table, $value['sourceColumn']);
         }
 
         return $joinQuery;
