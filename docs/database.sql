@@ -22,12 +22,12 @@ CREATE TABLE animegenre (
     anime INT NOT NULL UNIQUE,
     genre INT NOT NULL,
     
-    FOREIGN KEY(anime) REFERENCES anime(id),
-    FOREIGN KEY(genre) REFERENCES genre(id)
+    FOREIGN KEY(anime) REFERENCES anime(animeid),
+    FOREIGN KEY(genre) REFERENCES genre(genreid)
 );
 
 CREATE TABLE status (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    statusid INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL UNIQUE,
     description VARCHAR(200) NOT NULL UNIQUE
 );
@@ -47,7 +47,7 @@ CREATE TABLE watchlist (
     status INT NOT NULL,
     active BOOLEAN NOT NULL,
     
-    FOREIGN KEY(user) REFERENCES user(id),
-    FOREIGN KEY(anime) REFERENCES anime(id),
-    FOREIGN KEY(status) REFERENCES status(id)
+    FOREIGN KEY(user) REFERENCES user(userid),
+    FOREIGN KEY(anime) REFERENCES anime(animeid),
+    FOREIGN KEY(status) REFERENCES status(statusid)
 );
