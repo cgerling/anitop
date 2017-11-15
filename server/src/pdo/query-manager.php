@@ -28,7 +28,7 @@ class QueryManager {
         return $stmt->fetchAll();
     }
 
-    public function selectAll($join) {
+    public function selectAll($join = array()) {
         $query = "SELECT * FROM {$this->table}".$this->mountInnerJoin($join);
         $stmt = $this->createStatement($query);
 
