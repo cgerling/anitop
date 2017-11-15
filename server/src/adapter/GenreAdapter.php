@@ -32,7 +32,8 @@ class GenreAdapter implements iAdapter {
     }
 
     /**
-     * @param $anime
+     * Convert the Entity instance to key-value map to SQL Operations
+     * @param $entity
      * @return array
      */
     public function toMap($entity): array {
