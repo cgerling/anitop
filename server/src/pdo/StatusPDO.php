@@ -1,4 +1,5 @@
 <?php
+namespace Anitop\PDO;
 
 require_once "utils/QueryManager.php";
 require_once "entity/Status.php";
