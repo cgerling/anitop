@@ -1,4 +1,5 @@
 <?php
+namespace Anitop\Service;
 
 class DateTimeService {
     public static function fromString($date, $format = "Y-m-d") {
