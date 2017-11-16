@@ -1,7 +1,7 @@
 <?php
-namespace Anitop\Adapter;
+namespace anitop\adapter;
 
-use Anitop\Entity\Watchitem;
+use anitop\entity\Watchitem;
 
 class WatchitemAdapter implements iAdapter {
     private $animeAdapter;

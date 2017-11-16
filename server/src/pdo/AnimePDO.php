@@ -1,9 +1,9 @@
 <?php
-namespace Anitop\PDO;
+namespace anitop\pdo;
 
-use Anitop\Utils\QueryManager;
-use Anitop\Entity\Anime;
-use Anitop\Adapter\AnimeAdapter;
+use anitop\utils\QueryManager;
+use anitop\entity\Anime;
+use anitop\adapter\AnimeAdapter;
 
 class AnimePDO {
     private $table;

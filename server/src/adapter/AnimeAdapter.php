@@ -1,8 +1,8 @@
 <?php
-namespace Anitop\Adapter;
+namespace anitop\adapter;
 
-use Anitop\Entity\Anime;
-use Anitop\Service\DateTimeService;
+use anitop\entity\Anime;
+use anitop\service\DateTimeService;
 
 class AnimeAdapter implements iAdapter {
 

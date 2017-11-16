@@ -1,8 +1,8 @@
 <?php
-namespace Anitop\Adapter;
+namespace anitop\adapter;
 
-use Anitop\Entity\User;
-use Anitop\Service\DateTimeService;
+use anitop\entity\User;
+use anitop\service\DateTimeService;
 
 class UserAdapter implements iAdapter {
 

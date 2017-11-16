@@ -1,9 +1,9 @@
 <?php
-namespace Anitop\PDO;
+namespace anitop\pdo;
 
-use Anitop\Utils\QueryManager;
-use Anitop\Entity\Watchitem;
-use Anitop\Adapter\WatchitemAdapter;
+use anitop\utils\QueryManager;
+use anitop\entity\Watchitem;
+use anitop\adapter\WatchitemAdapter;
 
 class WatchitemPDO {
     private $table;

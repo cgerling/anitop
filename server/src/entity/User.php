@@ -1,5 +1,5 @@
 <?php
-namespace Anitop\Entity;
+namespace anitop\entity;
 
 class User extends Entity {
     public $name;

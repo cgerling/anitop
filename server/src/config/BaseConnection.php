@@ -1,5 +1,5 @@
 <?php
-namespace Anitop\Config;
+namespace anitop\config;
 
 class BaseConnection {
     private $connection;

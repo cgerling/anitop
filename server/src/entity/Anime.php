@@ -1,5 +1,5 @@
 <?php
-namespace Anitop\Entity;
+namespace anitop\entity;
 
 class Anime extends Entity {
     public $name;

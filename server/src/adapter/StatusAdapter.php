@@ -1,7 +1,7 @@
 <?php
-namespace Anitop\Adapter;
+namespace anitop\adapter;
 
-use Anitop\Entity\Status;
+use anitop\entity\Status;
 
 class StatusAdapter implements iAdapter {
 

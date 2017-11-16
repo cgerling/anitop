@@ -1,7 +1,7 @@
 <?php
-namespace Anitop\Adapter;
+namespace anitop\adapter;
 
-use Anitop\Entity\Genre;
+use anitop\entity\Genre;
 
 class GenreAdapter implements iAdapter {
 
