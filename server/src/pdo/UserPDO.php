@@ -29,7 +29,7 @@ class UserPDO {
 
     public function selectByEmail(string $email) {
         $filter = array(
-            0 => "user.name LIKE '%{$email}%'"
+            0 => "user.email LIKE '%{$email}%'"
         );
 
         $resulset = $this->query->selectOne(array(), $filter);
