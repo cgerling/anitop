@@ -16,7 +16,7 @@ class UserPDO {
         $this->adapter = new UserAdapter();
     }
 
-    public function selectById(int $id) {
+    public function selectById(int $id): User {
         $filter = array(
             0 => "user.userid = {$id}"
         );
@@ -27,7 +27,7 @@ class UserPDO {
         return $user;
     }
 
-    public function selectByEmail(string $email) {
+    public function selectByEmail(string $email): User {
         $filter = array(
             0 => "user.email LIKE '%{$email}%'"
         );
@@ -38,7 +38,7 @@ class UserPDO {
         return $user;
     }
 
-    public function selectAll() {
+    public function selectAll(): array {
         $resultset = $this->query->selectAll();
         $users = $this->adapter->toEntityArray($resultset);
 
