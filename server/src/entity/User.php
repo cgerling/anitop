@@ -7,7 +7,7 @@ class User extends Entity {
     public $password;
     public $birth;
 
-    public function __construct(string $name, string $email, string $password, DateTime $birth) {
+    public function __construct(string $name = '', string $email = '', string $password = '', \DateTime $birth = null) {
         $this->name = $name;
         $this->email = $email;
         $this->password = $password;
