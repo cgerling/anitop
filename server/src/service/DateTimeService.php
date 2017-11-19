@@ -1,6 +1,8 @@
 <?php
 namespace anitop\service;
 
+use \DateTime;
+
 class DateTimeService {
     public static function fromString($date, $format = "Y-m-d") {
         return DateTime::createFromFormat($format, $date);

@@ -1,6 +1,9 @@
 <?php
 namespace anitop\utils;
 
+use \PDOStatement;
+use \DateTime;
+use anitop\service\DateTimeService;
 use anitop\config\BaseConnection;
 
 class QueryManager {

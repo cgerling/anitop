@@ -1,6 +1,7 @@
 <?php
 namespace anitop\adapter;
 
+use \DateTime;
 use anitop\entity\User;
 use anitop\service\DateTimeService;
 

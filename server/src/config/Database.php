@@ -1,6 +1,8 @@
 <?php
 namespace anitop\config;
 
+use \PDO;
+
 class Database {
 
     private $database;
