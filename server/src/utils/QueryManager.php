@@ -87,6 +87,10 @@ class QueryManager {
 
     private function bindParams(PDOStatement $stmt, $values, $startIndex = 1) {
         foreach(array_values($values) as $key=>$value) {
+            if($value instanceof DateTime) {
+                $value = DateTimeService::toString($value);
+            }
+
             $index = $startIndex + $key;
             $stmt->bindValue($index, $value);
         }
