@@ -43,6 +43,8 @@ class QueryManager {
     }
 
     public function insert($fieldValues) {
+        unset($fieldValues['id']);
+
         $fields = join(",", array_keys($fieldValues));
         $bindValues = array_fill(0, count($fieldValues), "?");
         $values = join(",", $bindValues);
