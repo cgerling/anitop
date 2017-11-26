@@ -14,7 +14,7 @@ import Tabs from '@/components/Tabs'
 import Tab from '@/components/Tab'
 
 export default {
-  name: 'auth',
+  name: 'Auth',
   components: { Tabs, Tab }
 }
 </script>

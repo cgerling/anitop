@@ -19,7 +19,7 @@
 import { login } from '../services/authService.js'
 
 export default {
-  name: 'login',
+  name: 'Login',
   data () {
     return {
       email: '',

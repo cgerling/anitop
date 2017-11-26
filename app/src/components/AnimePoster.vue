@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-  name: 'anime-poster',
+  name: 'AnimePoster',
   props: ['url', 'name']
 }
 </script>

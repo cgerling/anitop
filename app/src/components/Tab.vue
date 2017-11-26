@@ -10,6 +10,7 @@
 </template>
 <script>
 export default {
+  name: 'Tab',
   props: ['path', 'title', 'icon'],
   data () {
     return {

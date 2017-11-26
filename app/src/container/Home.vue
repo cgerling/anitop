@@ -5,6 +5,7 @@
 import AnimeList from '@/components/AnimeList'
 
 export default {
+  name: 'Home',
   components: { AnimeList },
   data () {
     return {

@@ -7,8 +7,8 @@
 import AnimePoster from './AnimePoster'
 
 export default {
-  name: 'anime-list',
   components: { AnimePoster },
+  name: 'AnimeList',
   props: ['animes']
 }
 </script>

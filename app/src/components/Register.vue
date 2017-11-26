@@ -24,7 +24,7 @@
 import { register } from '../services/authService.js'
 
 export default {
-  name: 'register',
+  name: 'Register',
   data () {
     return {
       name: '',
