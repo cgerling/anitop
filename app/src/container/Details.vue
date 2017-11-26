@@ -9,9 +9,8 @@
         <anime-watch slot="button" />
       </anime-popularity>
     </div>
-    <p>
-      {{anime.author}} <br>
-      {{anime.publisher}} <br>
+    <p class="details">
+      {{anime.author}} • {{anime.publisher}}
     </p>
   </div>
 </template>
@@ -64,6 +63,14 @@ export default {
   font-size: 1.25em;
   font-weight: bold;
   text-align: center;
+  word-wrap: break-word;
+}
+
+.details {
+  font-size: .9em;
+  text-align: center;
+  margin: .5em 0;
+  padding: 0 .5em;
   word-wrap: break-word;
 }
 </style>
