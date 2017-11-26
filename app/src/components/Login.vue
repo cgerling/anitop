@@ -2,7 +2,7 @@
   <form @submit.prevent="login()">
     <div class="field">
       <div class="control">
-        <input class="input" type="text" placeholder="Email" v-model="email">
+        <input class="input" type="email" placeholder="Email" v-model="email">
       </div>
     </div>
     <div class="field">
