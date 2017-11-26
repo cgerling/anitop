@@ -8,13 +8,15 @@ class Anime extends Entity {
     public $author;
     public $publisher;
     public $genres;
+    public $image;
 
-    public function __construct(string $name = '', \DateTime $seasonRelease = null, string $description = '', string $author = '', string $publisher = '', array $genres = array()) {
+    public function __construct(string $name = '', \DateTime $seasonRelease = null, string $description = '', string $author = '', string $publisher = '', array $genres = array(), string $image = '') {
         $this->name = $name;
         $this->seasonRelease = $seasonRelease;
         $this->description = $description;
         $this->author = $author;
         $this->publisher = $publisher;
         $this->genres = $genres;
+        $this->image = $image;
     }
 }

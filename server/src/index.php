@@ -80,7 +80,7 @@ $app->post('/anime', function (Request $request, Response $response) {
     $animePdo = new PDO\AnimePDO();
 
     $body = $request->getParsedBody();
-    $newAnime = new \anitop\entity\Anime($body['name'], new DateTime(), $body['description'], $body['author'], $body['publiisher'], array());
+    $newAnime = new \anitop\entity\Anime($body['name'], new DateTime(), $body['description'], $body['author'], $body['publisher'], array(), $body['image']);
 
     $animePdo->create($newAnime);
 });

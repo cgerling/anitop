@@ -9,7 +9,8 @@ CREATE TABLE anime (
     seasonRelease DATE NOT NULL,
     description TEXT NOT NULL,
     author VARCHAR(200) NOT NULL,
-    publisher VARCHAR(200) NOT NULL
+    publisher VARCHAR(200) NOT NULL,
+    image TEXT NOT NULL
 );
 
 CREATE TABLE genre (
@@ -36,8 +37,7 @@ CREATE TABLE user (
     userid INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(200) NOT NULL,
     email VARCHAR(250) NOT NULL UNIQUE,
-    password VARCHAR(200) NOT NULL UNIQUE,
-    birth DATE NOT NULL
+    password VARCHAR(200) NOT NULL UNIQUE
 );
 
 CREATE TABLE watchlist (
