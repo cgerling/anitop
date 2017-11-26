@@ -15,7 +15,7 @@ export default {
     iconName () {
       return this.watching ? 'minus' : 'plus'
     },
-    text() {
+    text () {
       return this.watching ? 'Remover' : 'Assistir'
     }
   }
