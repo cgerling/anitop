@@ -12,6 +12,9 @@
     <p class="details">
       {{anime.author}} • {{anime.publisher}}
     </p>
+    <p class="description">
+      {{anime.description}}
+    </p>
   </div>
 </template>
 <script>
@@ -72,6 +75,18 @@ export default {
   margin: .5em 0;
   padding: 0 .5em;
   word-wrap: break-word;
+}
+
+.description {
+  font-size: .85em;
+  margin-bottom: .5em;
+  padding: 0 .5em;
+}
+
+.description::first-letter {
+  font-size: 2em;
+  font-weight: bold;
+  margin-left: .5em;
 }
 </style>
 // public $name;
