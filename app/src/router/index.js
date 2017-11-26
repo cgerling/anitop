@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Auth from '@/container/Auth'
 import Home from '@/container/Home'
 import Details from '@/container/Details'
+import Watchlist from '@/container/Watchlist'
 
 import Login from '@/components/Login'
 import Register from '@/components/Register'
@@ -41,6 +42,11 @@ export default new Router({
     {
       path: '/anime/:id',
       component: Details,
+      beforeEnter: AuthGuard
+    },
+    {
+      path: '/watchlist',
+      component: Watchlist,
       beforeEnter: AuthGuard
     }
   ]
