@@ -1,7 +1,13 @@
 <template>
   <div>
-    <div class="columns is-centered is-mobile is-marginless is-variable is-1">
-      <anime-poster class="column is-half" :url="anime.url" :name="anime.name" />
+    <div class="exibithion">
+      <p class="name">{{anime.name}}</p>
+      <div class="columns is-centered is-mobile is-marginless is-variable is-1">
+        <anime-poster class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop" :url="anime.url" />
+      </div>
+      <anime-popularity :quantity="anime.popularity">
+        <anime-watch slot="button" />
+      </anime-popularity>
     </div>
     <p>
       {{anime.author}} <br>
@@ -11,10 +17,12 @@
 </template>
 <script>
 import AnimePoster from '../components/AnimePoster'
+import AnimePopularity from '../components/AnimePopularity'
+import AnimeWatch from '../components/AnimeWatch'
 
 export default {
   name: 'Details',
-  components: { AnimePoster },
+  components: { AnimePoster, AnimePopularity, AnimeWatch },
   data () {
     return {
       anime: {
@@ -24,7 +32,8 @@ export default {
         publisher: 'Shonen\'s Jump',
         genres: ['Drama', 'Scream'],
         url: 'http://www.gstatic.com/tv/thumb/tvbanners/7842736/p7842736_b_v8_ab.jpg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum, arcu vitae faucibus efficitur, lorem tortor pellentesque nunc, nec blandit nunc metus ut lacus. Donec egestas porttitor velit vel lobortis. Nulla porttitor mi et justo vehicula, a ornare tortor tristique. Phasellus lobortis imperdiet aliquam. Aliquam malesuada scelerisque enim, eget lacinia tellus euismod quis. Proin finibus nunc vel diam mattis, at vulputate augue pharetra. Nam gravida laoreet ante, non gravida orci. Proin interdum nec lacus sed aliquam. Maecenas pulvinar sapien odio, a interdum eros interdum dapibus. Curabitur vel ultricies ante. Nulla at sollicitudin nunc. Etiam ullamcorper neque sit amet fringilla sollicitudin. Cras at nibh erat. Nunc ut ex luctus, ullamcorper massa eu, finibus erat. Vestibulum nibh libero, vestibulum non pellentesque et, elementum sit amet tortor. Donec sit amet velit dapibus, dapibus neque eu, eleifend dui. Phasellus vitae ullamcorper eros. Quisque at elit magna. Quisque gravida feugiat sagittis. Curabitur vitae lacus consequat, fermentum urna quis, vestibulum dolor. Maecenas nunc leo, porta vel augue malesuada, fermentum blandit ipsum. Nam non cursus enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur dapibus ut ante in pellentesque. Sed mattis semper nunc. Morbi non augue elementum, tempus felis vel, iaculis dui. Fusce faucibus maximus vestibulum. Nulla a volutpat dolor, id fermentum ex. Donec sit amet lorem lectus. Duis iaculis risus tellus, quis congue sem varius sit amet. Morbi nec ante id sapien malesuada maximus a sit amet augue.'
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum, arcu vitae faucibus efficitur, lorem tortor pellentesque nunc, nec blandit nunc metus ut lacus. Donec egestas porttitor velit vel lobortis. Nulla porttitor mi et justo vehicula, a ornare tortor tristique. Phasellus lobortis imperdiet aliquam. Aliquam malesuada scelerisque enim, eget lacinia tellus euismod quis. Proin finibus nunc vel diam mattis, at vulputate augue pharetra. Nam gravida laoreet ante, non gravida orci. Proin interdum nec lacus sed aliquam. Maecenas pulvinar sapien odio, a interdum eros interdum dapibus. Curabitur vel ultricies ante. Nulla at sollicitudin nunc. Etiam ullamcorper neque sit amet fringilla sollicitudin. Cras at nibh erat. Nunc ut ex luctus, ullamcorper massa eu, finibus erat. Vestibulum nibh libero, vestibulum non pellentesque et, elementum sit amet tortor. Donec sit amet velit dapibus, dapibus neque eu, eleifend dui. Phasellus vitae ullamcorper eros. Quisque at elit magna. Quisque gravida feugiat sagittis. Curabitur vitae lacus consequat, fermentum urna quis, vestibulum dolor. Maecenas nunc leo, porta vel augue malesuada, fermentum blandit ipsum. Nam non cursus enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur dapibus ut ante in pellentesque. Sed mattis semper nunc. Morbi non augue elementum, tempus felis vel, iaculis dui. Fusce faucibus maximus vestibulum. Nulla a volutpat dolor, id fermentum ex. Donec sit amet lorem lectus. Duis iaculis risus tellus, quis congue sem varius sit amet. Morbi nec ante id sapien malesuada maximus a sit amet augue.',
+        popularity: 50000
       }
     }
   },
@@ -46,7 +55,17 @@ export default {
 }
 </script>
 <style scoped>
+.exibithion {
+  background: #363636;
+}
 
+.exibithion .name {
+  color: #fff;
+  font-size: 1.25em;
+  font-weight: bold;
+  text-align: center;
+  word-wrap: break-word;
+}
 </style>
 // public $name;
 //     public $seasonRelease;
