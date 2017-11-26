@@ -1,17 +1,19 @@
 <template>
   <nav>
-    <div class="brand">
-      <router-link to="/">
-        <img src="../assets/logo.png" alt="">
-      </router-link>
-    </div>
-    <div class="options" v-if="logged">
-      <button @click="toggleSearch">
-        <icon name="search" />
-      </button>
-      <button @click="logout">
-        <icon name="sign-out" />
-      </button>
+    <div class="content elevate">
+      <div class="brand">
+        <router-link to="/">
+          <img src="../assets/logo.png" alt="">
+        </router-link>
+      </div>
+      <div class="options" v-if="logged">
+        <button @click="toggleSearch">
+          <icon name="search" />
+        </button>
+        <button @click="logout">
+          <icon name="sign-out" />
+        </button>
+      </div>
     </div>
     <search class="float-bottom" :class="{ 'open': showSearch, 'closed': !showSearch }" :show="showSearch" @search="search" @close="toggleSearch" />
   </nav>
@@ -45,15 +47,10 @@ export default {
 </script>
 <style scoped>
 nav {
-  align-items: center;
   background: #fff;
-  box-sizing: border-box;
   box-shadow: 0px -3px 10px 1px;
-  display: flex;
-  justify-content: space-between;
   height: 50px;
   left: 0;
-  padding: 5px 10px;
   position: fixed;
   right: 0;
   top: 0;
@@ -83,6 +80,21 @@ button {
   outline: none;
 }
 
+.content {
+  align-items: center;
+  background: #fff;
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+.elevate {
+  z-index: 10;
+}
+
 .float-bottom {
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
   position: absolute;
@@ -98,6 +110,5 @@ button {
 
 .closed {
   bottom: 0;
-  visibility: hidden;
 }
 </style>
