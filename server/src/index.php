@@ -13,6 +13,14 @@ $app = new \Slim\App;
 
 ConfigureSlim::configure($app);
 
+$app->add(function ($req, $res, $next) {
+    $response = $next($req, $res);
+    return $response
+            ->withHeader('Access-Control-Allow-Origin', 'http://localhost:8080')
+            ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
+            ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+});
+
 $app->post('/auth/login', function (Request $request, Response $response) {
     $authService = $this->get('authService');
     $encryptService = $this->get('encryptionService');
