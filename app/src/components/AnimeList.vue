@@ -1,14 +1,15 @@
 <template>
   <div class="columns is-multiline is-mobile is-variable is-1 is-marginless">
-    <anime-poster class="column is-half" v-for="anime in animes" :key="anime.id" :url="anime.url" :name="anime.name" />
+    <anime-link v-for="anime in animes" :key="anime.id" :url="anime.url" :name="anime.name"
+      class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop is-one-fifth-widescreen" />
   </div>
 </template>
 <script>
-import AnimePoster from './AnimePoster'
+import AnimeLink from './AnimeLink'
 
 export default {
-  components: { AnimePoster },
   name: 'AnimeList',
+  components: { AnimeLink },
   props: ['animes']
 }
 </script>
