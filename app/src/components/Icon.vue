@@ -3,8 +3,8 @@
 </template>
 <script>
 export default {
-  name: 'icon',
   props: ['name']
+  name: 'Icon',
 }
 </script>
 <style scoped>
