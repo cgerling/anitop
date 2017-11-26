@@ -27,6 +27,7 @@ export default {
   font-size: .8em;
   font-weight: bold;
   left: 0;
+  padding: 0 .5em;
   position: absolute;
   right: 0;
   z-index: 10;
