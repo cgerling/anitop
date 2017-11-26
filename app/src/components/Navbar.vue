@@ -97,15 +97,16 @@ button {
 
 .float-bottom {
   box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);
-  position: absolute;
+  height: 45px;
   left: 0;
+  position: absolute;
   right: 0;
   transition: ease all 320ms;
   z-index: -1;
 }
 
 .open {
-  bottom: -26px;
+  bottom: -45px;
 }
 
 .closed {

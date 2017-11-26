@@ -51,6 +51,7 @@ input[type="text"] {
   border: none;
   bottom: 0;
   color: #4a4a4a;
+  height: 100%;
   outline: none;
   position: absolute;
   top: 0;
