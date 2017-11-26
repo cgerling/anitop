@@ -7,7 +7,7 @@ export default {
   props: ['name'],
   computed: {
     icon () {
-      return `fa-${name}`
+      return `fa-${this.name}`
     }
   }
 }
