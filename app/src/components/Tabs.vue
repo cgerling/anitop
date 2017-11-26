@@ -10,6 +10,6 @@ export default {
   name: 'Tabs'
 }
 </script>
-<style lang="sass" scoped>
+<style scoped>
 
 </style>
