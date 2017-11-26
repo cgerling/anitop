@@ -22,13 +22,13 @@ export default {
 
 .name {
   background: rgba(0, 0, 0, 0.5);
-  bottom: 12px;
+  bottom: 0;
   color: #fff;
   font-size: .8em;
   font-weight: bold;
-  left: 4px;
+  left: 0;
   position: absolute;
-  right: 4px;
+  right: 0;
   z-index: 10;
 }
 </style>
