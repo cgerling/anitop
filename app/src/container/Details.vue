@@ -89,9 +89,3 @@ export default {
   margin-left: .5em;
 }
 </style>
-// public $name;
-//     public $seasonRelease;
-//     public $description;
-//     public $author;
-//     public $publisher;
-//     public $genres;
