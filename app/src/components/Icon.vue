@@ -1,12 +1,16 @@
 <template>
-  <i class="fa" :class="'fa-' + name"></i>
+  <i class="fa" :class="icon"></i>
 </template>
 <script>
 export default {
-  props: ['name']
   name: 'Icon',
+  props: ['name'],
+  computed: {
+    icon () {
+      return `fa-${name}`
+    }
+  }
 }
 </script>
 <style scoped>
-
 </style>
