@@ -58,6 +58,8 @@ $app->post('/auth/register', function (Request $request, Response $response) {
     $userPdo->create($newUser);
 });
 
+// TODO: add auth middleware
+
 $app->get('/anime', function (Request $request, Response $response) {
     $animePdo = new PDO\AnimePDO();
 
@@ -128,6 +130,18 @@ $app->put('/watchlist', function (Request $request, Response $response) {
 
     $watchitem = new \anitop\entity\Watchitem($anime, $user, $status);
     $watchitemPdo->create($watchitem);
+});
+
+$app->get('/watchlist/status', function (Request $request, Response $response) {
+    $statusPdo = new PDO\StatusPDO();
+
+    $body = $request->getParsedBody();
+    $status = $statusPdo->selectAll();
+    $data = array(
+        'status' => $status
+    );
+
+    return $response->withJson($data);
 });
 
 $app->run();
