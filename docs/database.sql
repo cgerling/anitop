@@ -6,9 +6,8 @@ USE anitop;
 CREATE TABLE anime (
     animeid INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(200) NOT NULL UNIQUE,
-    seasonRelease DATE NOT NULL,
     description TEXT NOT NULL,
-    author VARCHAR(200) NOT NULL,
+    studio VARCHAR(200) NOT NULL,
     publisher VARCHAR(200) NOT NULL,
     image TEXT NOT NULL
 );
