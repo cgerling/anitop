@@ -34,8 +34,8 @@ export default {
   },
   methods: {
     register () {
-      register(this.name, this.email, this.passwd).thne(() => {
-        this.$route.push('/auth/login')
+      register(this.name, this.email, this.passwd).then(() => {
+        this.$router.push('/auth/login')
       })
     }
   }
