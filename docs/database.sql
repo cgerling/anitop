@@ -30,7 +30,6 @@ CREATE TABLE watchlist (
     user INT NOT NULL,
     anime INT NOT NULL,
     status INT NOT NULL,
-    active BOOLEAN NOT NULL,
     
     FOREIGN KEY(user) REFERENCES user(userid),
     FOREIGN KEY(anime) REFERENCES anime(animeid),
