@@ -35,3 +35,10 @@ CREATE TABLE watchlist (
     FOREIGN KEY(anime) REFERENCES anime(animeid),
     FOREIGN KEY(status) REFERENCES status(statusid)
 );
+
+-- SET DATABASE AS FULL UTF8
+ALTER DATABASE anitop CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ALTER TABLE anime CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ALTER TABLE status CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ALTER TABLE user CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+ALTER TABLE watchlist CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
