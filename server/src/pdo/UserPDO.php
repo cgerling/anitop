@@ -11,7 +11,7 @@ class UserPDO {
     private $adapter;
 
     public function __construct() {
-        $this->table = "user";
+        $this->table = 'user';
         $this->query = new QueryManager($this->table);
         $this->adapter = new UserAdapter();
     }
@@ -48,7 +48,7 @@ class UserPDO {
     public function create(User $user) {
         $values = $this->adapter->toMap($user);
 
-        unset($values["userid"]);
+        unset($values['userid']);
 
         $this->query->insert($values);
     }
