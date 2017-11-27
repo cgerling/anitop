@@ -71,8 +71,11 @@ $app->get('/anime', function (Request $request, Response $response) {
 
     $page = ($page - 1) * 30;
 
+    $result = array_slice($allAnimes, $page, $size, true);
+    $animes = \anitop\utils\EncodingService::encodeMultipleArray($result);
+
     $data = array(
-        'animes' => array_slice($allAnimes, $page, $size, true)
+        'animes' => $animes
     );
 
     return $response->withJson($data);
@@ -87,14 +90,15 @@ $app->post('/anime', function (Request $request, Response $response) {
     $animePdo->create($newAnime);
 });
 
-$app->get('/anime/:id', function (Request $request, Response $response) {
+$app->get('/anime/{id}', function (Request $request, Response $response, $args) {
     $animePdo = new PDO\AnimePDO();
 
-    $body = $request->getParsedBody();
-    $anime = $animePdo->selectById($body['id']);
+    $anime = $animePdo->selectById($args['id']);
+
+    $result = \anitop\utils\EncodingService::encodeArray($anime);
 
     $data = array(
-        'anime' => $anime
+        'anime' => $result
     );
 
     return $response->withJson($data);
