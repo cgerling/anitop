@@ -36,16 +36,19 @@ export default new Router({
     },
     {
       path: '/home',
+      name: 'Início',
       component: Home,
       beforeEnter: AuthGuard
     },
     {
       path: '/anime/:id',
+      name: 'Detalhes',
       component: Details,
       beforeEnter: AuthGuard
     },
     {
       path: '/watchlist',
+      name: 'Assistindo',
       component: Watchlist,
       beforeEnter: AuthGuard
     }
