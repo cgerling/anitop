@@ -38,6 +38,13 @@ class StatusPDO {
         return $status;
     }
 
+    public function selectAll() {
+        $resultset = $this->query->selectAll();
+        $status = $this->adapter->toEntityArray($resultset);
+
+        return $status;
+    }
+
     public function create(Status $status) {
         $values = $this->adapter->toMap($status);
 
