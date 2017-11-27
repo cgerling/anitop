@@ -12,9 +12,7 @@ class AnimeAdapter implements iAdapter {
      * @return Entity
      */
     public function toEntity($resultset) {
-        $seasonRelease = DateTimeService::fromString($resultset["seasonRelease"]);
-
-        $anime = new Anime($resultset["name"], $seasonRelease, $resultset["description"], $resultset["author"], $resultset["publisher"], array());
+        $anime = new Anime($resultset['name'], $resultset['description'], $resultset['studio'], $resultset['publisher'], $resultset['image']);
         $anime->id = $resultset["animeid"];
 
         return $anime;
@@ -44,17 +42,12 @@ class AnimeAdapter implements iAdapter {
         $animeMap = array();
 
         foreach ($anime as $key=>$value) {
-            if($value instanceof DateTime) {
-                $value = DateTimeService::toString($value);
-            }
-
             $animeMap[$key] = $value;
         }
 
         $animeMap["animeid"] = $animeMap["id"];
         unset($animeMap["id"]);
-        unset($animeMap["genres"]);
-
+        
         return $animeMap;
     }
 }

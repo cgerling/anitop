@@ -98,37 +98,6 @@ $app->get('/anime/:id', function (Request $request, Response $response) {
     return $response->withJson($data);
 });
 
-$app->put('/anime/:id/genres', function (Request $request, Response $response) {
-
-});
-
-$app->get('/genres', function (Request $request, Response $response) {
-    $genrePdo = new PDO\GenrePDO();
-
-    $allGenres = $genrePdo->selectAll();
-
-    $body = $request->getParsedBody();
-    $page = $body['page'] !== null && $body['page'] > 0 ? $body['page'] : 1;
-    $size = $body['size'] ?? 30;
-
-    $page = ($page - 1) * 30;
-
-    $data = array(
-        'genres' => array_slice($allGenres, $page, $size, true)
-    );
-
-    return $response->withJson($data);
-});
-
-$app->post('/genres', function (Request $request, Response $response) {
-    $genrePdo = new PDO\GenrePDO();
-
-    $body = $request->getParsedBody();
-    $newAnime = new \anitop\entity\Genre($body['name']);
-
-    $genrePdo->create($newAnime);
-});
-
 $app->get('/watchlist', function (Request $request, Response $response) {
     $watchitemPdo = new PDO\WatchitemPDO();
 

@@ -10,19 +10,7 @@ class AnimePDO {
     private $query;
     private $adapter;
 
-    private $tableJoin = array(
-        0 => array(
-            "targetTable" => "animegenre",
-            "targetColumn" => "anime",
-            "sourceColumn" => "animeid"
-        ),
-        1 => array(
-            "targetTable" => "genre",
-            "targetColumn" => "genreid",
-            "sourceTable" => "animegenre",
-            "sourceColumn" => "genre"
-        )
-    );
+    private $tableJoin = array();
 
     public function __construct() {
         $this->table = "anime";

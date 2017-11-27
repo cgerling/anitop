@@ -3,20 +3,16 @@ namespace anitop\entity;
 
 class Anime extends Entity {
     public $name;
-    public $seasonRelease;
     public $description;
-    public $author;
+    public $studio;
     public $publisher;
-    public $genres;
     public $image;
 
-    public function __construct(string $name = '', \DateTime $seasonRelease = null, string $description = '', string $author = '', string $publisher = '', array $genres = array(), string $image = '') {
+    public function __construct(string $name = '', string $description = '', string $studio = '', string $publisher = '', string $image = '') {
         $this->name = $name;
-        $this->seasonRelease = $seasonRelease;
         $this->description = $description;
-        $this->author = $author;
+        $this->studio = $studio;
         $this->publisher = $publisher;
-        $this->genres = $genres;
         $this->image = $image;
     }
 }
