@@ -13,10 +13,8 @@ class UserAdapter implements iAdapter {
      * @return Entity
      */
     public function toEntity($resultset) {
-        $birth = DateTimeService::fromString($resultset["birth"]);
-
-        $user = new User($resultset["name"], $resultset["email"], $resultset["password"], $birth);
-        $user->id = $resultset["userid"];
+        $user = new User($resultset['name'], $resultset['email'], $resultset['password']);
+        $user->id = $resultset['userid'];
 
         return $user;
     }
@@ -45,12 +43,11 @@ class UserAdapter implements iAdapter {
         $userMap = array();
 
         foreach ($entity as $key=>$value) {
-            if($value instanceof DateTime) {
-                $value = DateTimeService::toString($value);
-            }
-
             $userMap[$key] = $value;
         }
+
+        $userMap['userid'] = $userMap['id'];
+        unset($userMap['id']);
 
         return $userMap;
     }
