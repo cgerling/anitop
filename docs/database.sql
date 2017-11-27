@@ -12,20 +12,6 @@ CREATE TABLE anime (
     image TEXT NOT NULL
 );
 
-CREATE TABLE genre (
-    genreid INT PRIMARY KEY AUTO_INCREMENT,
-    name VARCHAR(100) NOT NULL UNIQUE
-);
-
-CREATE TABLE animegenre (
-    animegenreid INT PRIMARY KEY AUTO_INCREMENT,
-    anime INT NOT NULL UNIQUE,
-    genre INT NOT NULL,
-    
-    FOREIGN KEY(anime) REFERENCES anime(animeid),
-    FOREIGN KEY(genre) REFERENCES genre(genreid)
-);
-
 CREATE TABLE status (
     statusid INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(50) NOT NULL UNIQUE,
