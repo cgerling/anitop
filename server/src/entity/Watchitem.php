@@ -2,7 +2,6 @@
 namespace anitop\entity;
 
 class Watchitem extends Entity {
-
     private $anime;
     private $user;
     private $status;
