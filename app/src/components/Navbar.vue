@@ -6,6 +6,9 @@
           <img src="../assets/logo.png" alt="">
         </router-link>
       </div>
+      <div class="name">
+        {{name}}
+      </div>
       <div class="options" v-if="logged">
         <button @click="toggleSearch">
           <icon name="search" />
@@ -28,6 +31,7 @@ export default {
   props: ['logged'],
   data () {
     return {
+      name: 'Inicial',
       showSearch: false
     }
   },
@@ -41,6 +45,14 @@ export default {
     },
     toggleSearch () {
       this.showSearch = !this.showSearch
+    }
+  },
+  created () {
+    this.name = this.$route.name
+  },
+  watch: {
+    '$route' (to, from) {
+      this.name = to.name
     }
   }
 }
