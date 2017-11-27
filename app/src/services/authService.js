@@ -1,4 +1,4 @@
-import httpService from 'axios'
+import httpService from './http'
 
 const storageTokenKey = 'USER_TOKEN'
 
@@ -11,7 +11,7 @@ export function obtainToken () {
 }
 
 export function login (email, password) {
-  return httpService.post('http://localhost:3000/auth/login', {
+  return httpService.post('/auth/login', {
     email,
     password
   }).then(({ data }) => {
@@ -24,7 +24,7 @@ export function logout () {
 }
 
 export function register (name, email, password) {
-  return httpService.post('http://localhost:3000/auth/register', {
+  return httpService.post('/auth/register', {
     name,
     email,
     password
