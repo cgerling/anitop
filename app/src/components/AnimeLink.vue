@@ -1,6 +1,6 @@
 <template>
   <router-link :to="path" tag="div" class="pointer">
-    <anime-poster :name="name" :url="url" />
+    <anime-poster :name="name" :url="image" />
   </router-link>
 </template>
 <script>
@@ -9,10 +9,10 @@ import AnimePoster from './AnimePoster'
 export default {
   name: 'AnimeLink',
   components: { AnimePoster },
-  props: ['id', 'name', 'url'],
+  props: ['id', 'name', 'image'],
   computed: {
     path () {
-      return `/anime/${this.div}`
+      return `/anime/${this.id}`
     }
   }
 }
