@@ -33,7 +33,8 @@ class StatusPDO {
         );
 
         $resultset = $this->query->select(array(), $filter);
-        $status = $this->adapter->toEntity($resultset);
+
+        $status = $this->adapter->toEntityArray($resultset);
 
         return $status;
     }

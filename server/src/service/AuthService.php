@@ -23,8 +23,8 @@ class AuthService {
         return JWT::encode($userInfo, $this->secret);
     }
 
-    public function parseToken(string $token) {
-        return JWT::decode($token, $this->secret, $this->algorithm);
+    public function parseToken(string $token): array {
+        return (array) JWT::decode($token, $this->secret, $this->algorithm);
     }
 
 }

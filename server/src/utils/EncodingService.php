@@ -16,11 +16,21 @@ class EncodingService {
         return $encoded;
     }
 
-    public static function encodeMultipleArray($data = array()) {
+    public static function encodeDoubleArray($data = array()) {
         $encoded = array();
 
         foreach ($data as $value) {
             $encoded[] = EncodingService::encodeArray($value);
+        }
+
+        return $encoded;
+    }
+
+    public static function encodeTripleArray($data = array()) {
+        $encoded = array();
+
+        foreach ($data as $values) {
+            $encoded[] = EncodingService::encodeDoubleArray($values);
         }
 
         return $encoded;

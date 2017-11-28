@@ -1,6 +1,7 @@
 <?php
 namespace anitop\adapter;
 
+use anitop\entity\User;
 use anitop\entity\Watchitem;
 
 class WatchitemAdapter implements iAdapter {
@@ -22,10 +23,12 @@ class WatchitemAdapter implements iAdapter {
     public function toEntity($resultset)
     {
         $anime = $this->animeAdapter->toEntity($resultset);
-        $user = $this->userAdapter->toEntity($resultset);
-        $status = $this->statusAdapter->toEntity($resultset);
+        $user = new User();
+        $user->id = $resultset['userid'];
+        $status = null;
 
         $watchitem = new Watchitem($anime, $user, $status);
+        $watchitem->id = $resultset['watchlistid'];
 
         return $watchitem;
     }
@@ -58,6 +61,9 @@ class WatchitemAdapter implements iAdapter {
         foreach ($entity as $key=>$value) {
             $watchitemMap[$key] = $value->id;
         }
+
+        $watchitemMap['watchitemid'] = $entity->id;
+        unset($watchitemMap['id']);
 
         return $watchitemMap;
     }

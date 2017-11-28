@@ -42,6 +42,13 @@ class QueryManager {
         return $stmt->fetchAll();
     }
 
+    public function count($joinTables = array(), $whereStatement = array()) {
+        $all = $this->select($joinTables, $whereStatement);
+
+        return count($all);
+    }
+
+
     public function insert($fieldValues) {
         unset($fieldValues['id']);
 
@@ -59,11 +66,12 @@ class QueryManager {
     }
 
     public function update($fieldValues, $whereStatement = array()) {
+        unset($fieldValues['watchitemid']);
         $updateFields = $this->mountKeyValueStatement(array_keys($fieldValues), array_fill(0, count($fieldValues), "?"));
         $updateFields = join(",", $updateFields);
 
         $query = "UPDATE {$this->table} SET {$updateFields}".$this->filter($whereStatement);
-        
+
         $stmt = $this->createStatement($query);
         $stmt = $this->bindParams($stmt, $fieldValues);
 

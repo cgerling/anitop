@@ -15,12 +15,12 @@ class WatchitemPDO {
             "targetTable" => "anime",
             "targetColumn" => "animeid",
             "sourceColumn" => "anime"
-        ),
+        )/*,
         1 => array(
             "targetTable" => "status",
             "targetColumn" => "statusid",
             "sourceColumn" => "status"
-        )
+        )*/
     );
 
     public function __construct() {
@@ -51,6 +51,74 @@ class WatchitemPDO {
         return $watchlist;
     }
 
+    public function selectByAnimeStatus(int $animeId, int $statusId) {
+        $filter = array(
+            0 => "watchlist.anime = {$animeId}",
+            1 => "AND",
+            2 => "watchlist.status = {$statusId}"
+        );
+
+        $resultset = $this->query->select($this->tableJoin, $filter);
+        $watchlist = $this->adapter->toEntityArray($resultset);
+
+        return $watchlist;
+    }
+
+    public function selectByUserStatus(int $userId, int $statusId) {
+        $filter = array(
+            0 => "watchlist.user = {$userId}",
+            1 => "AND",
+            2 => "watchlist.status = {$statusId}"
+        );
+
+        $resultset = $this->query->select($this->tableJoin, $filter);
+        $watchlist = $this->adapter->toEntityArray($resultset);
+
+        return $watchlist;
+    }
+
+    public function selectByUserAnime(int $userId, int $animeId) {
+        $filter = array(
+            0 => "watchlist.user = {$userId}",
+            1 => "AND",
+            2 => "watchlist.anime = {$animeId}"
+        );
+
+        $resultset = $this->query->selectOne($this->tableJoin, $filter);
+        $watchlist = $this->adapter->toEntity($resultset);
+
+        return $watchlist;
+    }
+
+    public function isWatching(int $userId, int $animeId, int $activeStatusId) {
+        $filter = array(
+            0 => "watchlist.user = {$userId}",
+            1 => "AND",
+            2 => "watchlist.anime = {$animeId}",
+            3 => "AND",
+            4 => "watchlist.status = {$activeStatusId}"
+        );
+
+        $count = $this->query->count($this->tableJoin, $filter);
+
+        return $count > 0;
+    }
+
+    public function selectByUserAnimeStatus(int $userId, int $animeId, int $statusId) {
+        $filter = array(
+            0 => "watchlist.user = {$userId}",
+            1 => "AND",
+            2 => "watchlist.anime = {$animeId}",
+            3 => "AND",
+            4 => "watchlist.status = {$statusId}"
+        );
+
+        $resultset = $this->query->selectOne($this->tableJoin, $filter);
+        $watchlist = $this->adapter->toEntity($resultset);
+
+        return $watchlist;
+    }
+
     public function selectAll() {
         $resultset = $this->query->selectAll($this->tableJoin);
         $watchlist = $this->adapter->toEntityArray($resultset);
@@ -60,14 +128,14 @@ class WatchitemPDO {
 
     public function create(Watchitem $watchitem) {
         $values = $this->adapter->toMap($watchitem);
-
-        unset($values["watchlistid"]);
+        unset($values["watchitemid"]);
 
         $this->query->insert($values);
     }
 
     public function update(Watchitem $watchitem) {
         $fields = $this->adapter->toMap($watchitem);
+
         $filter = array(
             0 => "watchlist.watchlistid = {$watchitem->id}"
         );

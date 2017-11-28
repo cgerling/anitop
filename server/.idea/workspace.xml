@@ -2,10 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a107945-e0ca-46bd-bf57-778bf2162947" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../app/src/components/Register.vue" afterPath="$PROJECT_DIR$/../app/src/components/Register.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../app/src/container/Home.vue" afterPath="$PROJECT_DIR$/../app/src/container/Home.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../app/src/components/AnimeWatch.vue" afterPath="$PROJECT_DIR$/../app/src/components/AnimeWatch.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../app/src/components/Navbar.vue" afterPath="$PROJECT_DIR$/../app/src/components/Navbar.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../app/src/container/Details.vue" afterPath="$PROJECT_DIR$/../app/src/container/Details.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../app/src/container/Watchlist.vue" afterPath="$PROJECT_DIR$/../app/src/container/Watchlist.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../app/src/services/animeService.js" afterPath="$PROJECT_DIR$/../app/src/services/animeService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../app/src/services/authService.js" afterPath="$PROJECT_DIR$/../app/src/services/authService.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../app/src/services/http.js" afterPath="$PROJECT_DIR$/../app/src/services/http.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/bd64cf2c-ffbb-49e0-a2e0-053d1df257c8.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/bd64cf2c-ffbb-49e0-a2e0-053d1df257c8.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/adapter/StatusAdapter.php" afterPath="$PROJECT_DIR$/src/adapter/StatusAdapter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/adapter/WatchitemAdapter.php" afterPath="$PROJECT_DIR$/src/adapter/WatchitemAdapter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/entity/Watchitem.php" afterPath="$PROJECT_DIR$/src/entity/Watchitem.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.php" afterPath="$PROJECT_DIR$/src/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pdo/StatusPDO.php" afterPath="$PROJECT_DIR$/src/pdo/StatusPDO.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/pdo/WatchitemPDO.php" afterPath="$PROJECT_DIR$/src/pdo/WatchitemPDO.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/service/AuthService.php" afterPath="$PROJECT_DIR$/src/service/AuthService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/EncodingService.php" afterPath="$PROJECT_DIR$/src/utils/EncodingService.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/QueryManager.php" afterPath="$PROJECT_DIR$/src/utils/QueryManager.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,28 +54,18 @@
         <item name="" type="eadb38e5:DatabaseStructure$Root" />
         <item name="anitop@localhost" type="e3449647:DbNodeDescriptor" />
         <item name="anitop" type="e3449647:DbNodeDescriptor" />
-        <item name="user" type="e3449647:DbNodeDescriptor" />
+        <item name="watchlist" type="e3449647:DbNodeDescriptor" />
       </path>
     </expand>
     <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="134">
-              <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
-              <folding>
-                <element signature="e#36#92#0#PHP" expanded="true" />
-                <element signature="e#310#694#2#PHP" expanded="false" />
-                <element signature="e#724#1447#1#PHP" expanded="false" />
-                <element signature="e#1480#1848#1#PHP" expanded="false" />
-                <element signature="e#2467#2786#1#PHP" expanded="false" />
-                <element signature="e#3148#3444#1#PHP" expanded="false" />
-                <element signature="e#3472#4055#1#PHP" expanded="false" />
-                <element signature="e#4090#4352#1#PHP" expanded="false" />
-              </folding>
+      <file leaf-file-name="watchlist" pinned="false" current-in-tab="true">
+        <entry file="das://table:/ae5a5a77/bd64cf2c-ffbb-49e0-a2e0-053d1df257c8/anitop.watchlist">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -71,6 +75,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>$this-&gt;adapter-&gt;entity</find>
+      <find>Encodin</find>
+      <find>var_dump</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -79,7 +85,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/adapter/genre-adapter.php" />
         <option value="$PROJECT_DIR$/src/pdo/status-pdo.php" />
         <option value="$PROJECT_DIR$/src/adapter/status-adapter.php" />
         <option value="$PROJECT_DIR$/src/entities/status.php" />
@@ -95,16 +100,12 @@
         <option value="$PROJECT_DIR$/src/config/dependencies.php" />
         <option value="$PROJECT_DIR$/src/adapter/GenreAdapter.php" />
         <option value="$PROJECT_DIR$/src/adapter/iAdapter.php" />
-        <option value="$PROJECT_DIR$/src/adapter/StatusAdapter.php" />
-        <option value="$PROJECT_DIR$/src/adapter/WatchitemAdapter.php" />
         <option value="$PROJECT_DIR$/src/adapter/AnimeAdapter.php" />
         <option value="$PROJECT_DIR$/src/config/BaseConnection.php" />
         <option value="$PROJECT_DIR$/src/entity/Entity.php" />
         <option value="$PROJECT_DIR$/src/entity/Genre.php" />
-        <option value="$PROJECT_DIR$/src/entity/Watchitem.php" />
         <option value="$PROJECT_DIR$/src/pdo/AnimePDO.php" />
         <option value="$PROJECT_DIR$/src/pdo/GenrePDO.php" />
-        <option value="$PROJECT_DIR$/src/pdo/WatchitemPDO.php" />
         <option value="$PROJECT_DIR$/src/database/Column.php" />
         <option value="$PROJECT_DIR$/src/database/Join.php" />
         <option value="$PROJECT_DIR$/src/database/Table.php" />
@@ -113,7 +114,6 @@
         <option value="$PROJECT_DIR$/src/database/Where.php" />
         <option value="$PROJECT_DIR$/src/database/Statement.php" />
         <option value="$PROJECT_DIR$/src/api/v1/Anime.php" />
-        <option value="$PROJECT_DIR$/src/service/AuthService.php" />
         <option value="$PROJECT_DIR$/src/api/v1/Authentication.php" />
         <option value="$PROJECT_DIR$/src/service/EncriptionService.php" />
         <option value="$PROJECT_DIR$/src/service/EncryptionService.php" />
@@ -123,12 +123,18 @@
         <option value="$PROJECT_DIR$/src/service/DateTimeService.php" />
         <option value="$PROJECT_DIR$/src/adapter/UserAdapter.php" />
         <option value="$PROJECT_DIR$/src/pdo/UserPDO.php" />
-        <option value="$PROJECT_DIR$/src/utils/QueryManager.php" />
         <option value="$PROJECT_DIR$/src/entity/Anime.php" />
         <option value="$PROJECT_DIR$/src/entity/User.php" />
         <option value="$PROJECT_DIR$/src/entity/Status.php" />
+        <option value="$PROJECT_DIR$/src/service/AuthService.php" />
+        <option value="$PROJECT_DIR$/src/adapter/StatusAdapter.php" />
         <option value="$PROJECT_DIR$/src/pdo/StatusPDO.php" />
+        <option value="$PROJECT_DIR$/src/entity/Watchitem.php" />
+        <option value="$PROJECT_DIR$/src/adapter/WatchitemAdapter.php" />
         <option value="$PROJECT_DIR$/src/utils/EncodingService.php" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/bd64cf2c-ffbb-49e0-a2e0-053d1df257c8/console.sql" />
+        <option value="$PROJECT_DIR$/src/utils/QueryManager.php" />
+        <option value="$PROJECT_DIR$/src/pdo/WatchitemPDO.php" />
         <option value="$PROJECT_DIR$/src/index.php" />
       </list>
     </option>
@@ -232,7 +238,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="SearchEverywhereHistoryKey" value="var_dump&#9;null&#9;null&#10;Search&#9;ACTION&#9;SearchEverywhere&#10;Ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;Termi&#9;ACTION&#9;ActivateTerminalToolWindow&#10;Searc&#9;ACTION&#9;SearchEverywhere&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;terminal&#9;ACTION&#9;ActivateTerminalToolWindow&#10;Proje&#9;ACTION&#9;ActivateProjectToolWindow&#10;Dat&#9;ACTION&#9;ActivateDatabaseToolWindow&#10;Data&#9;ACTION&#9;ActivateDatabaseConsoleToolWindow&#10;console&#9;ACTION&#9;IdeScriptingConsole&#10;da&#9;ACTION&#9;ActivateDatabaseToolWindow&#10;data&#9;ACTION&#9;ActivateDatabaseToolWindow&#10;Database&#9;ACTION&#9;ActivateDatabaseToolWindow&#10;Project Settings&#9;ACTION&#9;ProjectViewPopupMenuSettingsGroup" />
+    <property name="SearchEverywhereHistoryKey" value="Sea&#9;ACTION&#9;SearchEverywhere&#10;var_dump&#9;null&#9;null&#10;Search&#9;ACTION&#9;SearchEverywhere&#10;Ter&#9;ACTION&#9;ActivateTerminalToolWindow&#10;Termi&#9;ACTION&#9;ActivateTerminalToolWindow&#10;Searc&#9;ACTION&#9;SearchEverywhere&#10;term&#9;ACTION&#9;ActivateTerminalToolWindow&#10;terminal&#9;ACTION&#9;ActivateTerminalToolWindow&#10;Proje&#9;ACTION&#9;ActivateProjectToolWindow&#10;Dat&#9;ACTION&#9;ActivateDatabaseToolWindow&#10;Data&#9;ACTION&#9;ActivateDatabaseConsoleToolWindow&#10;console&#9;ACTION&#9;IdeScriptingConsole&#10;da&#9;ACTION&#9;ActivateDatabaseToolWindow&#10;data&#9;ACTION&#9;ActivateDatabaseToolWindow&#10;Database&#9;ACTION&#9;ActivateDatabaseToolWindow&#10;Project Settings&#9;ACTION&#9;ProjectViewPopupMenuSettingsGroup" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MySQL" />
   </component>
@@ -292,34 +298,34 @@
       <workItem from="1511038485486" duration="8176000" />
       <workItem from="1511779613582" duration="234000" />
       <workItem from="1511791279077" duration="1207000" />
-      <workItem from="1511821664389" duration="2180000" />
+      <workItem from="1511821664389" duration="17883000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73170000" />
+    <option name="totallyTimeSpent" value="88873000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13820705" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33753943" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14834578" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.50275373" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29504326" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2945571" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.49724627" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991803" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38801262" sideWeight="0.49786553" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38801262" sideWeight="0.49786553" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33788037" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948583" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -336,13 +342,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/adapter/AnimeAdapter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="51" column="25" lean-forward="true" selection-start-line="51" selection-start-column="25" selection-end-line="51" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/bd64cf2c-ffbb-49e0-a2e0-053d1df257c8/console.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -400,28 +399,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/bd64cf2c-ffbb-49e0-a2e0-053d1df257c8/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="36" lean-forward="true" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/ae5a5a77/bd64cf2c-ffbb-49e0-a2e0-053d1df257c8/anitop.watchlist">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/config/dependencies.php" />
-    <entry file="file://$PROJECT_DIR$/src/adapter/StatusAdapter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/adapter/GenreAdapter.php" />
     <entry file="file://$PROJECT_DIR$/src/adapter/AnimeAdapter.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -438,37 +416,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/entity/Entity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/entity/Genre.php" />
-    <entry file="file://$PROJECT_DIR$/src/entity/Watchitem.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="18" lean-forward="false" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pdo/WatchitemPDO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          <folding>
-            <element signature="e#29#59#0#PHP" expanded="false" />
-            <element signature="e#236#546#0#PHP" expanded="false" />
-            <element signature="e#553#730#0#PHP" expanded="false" />
-            <element signature="e#736#1025#0#PHP" expanded="false" />
-            <element signature="e#1031#1325#0#PHP" expanded="false" />
-            <element signature="e#1331#1522#0#PHP" expanded="false" />
-            <element signature="e#1528#1713#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pdo/GenrePDO.php" />
     <entry file="file://$PROJECT_DIR$/src/database/Column.php" />
     <entry file="file://$PROJECT_DIR$/src/database/Join.php" />
@@ -487,38 +435,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/AuthService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding>
-            <element signature="e#33#56#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/config/ConfigureSlim.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="9" lean-forward="false" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding>
-            <element signature="e#32#53#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/adapter/iAdapter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="24" lean-forward="false" selection-start-line="1" selection-start-column="24" selection-end-line="1" selection-end-column="24" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/service/EncryptionService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -552,43 +473,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/adapter/UserAdapter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="66" lean-forward="false" selection-start-line="15" selection-start-column="66" selection-end-line="15" selection-end-column="66" />
-          <folding>
-            <element signature="e#33#47#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/ae5a5a77/bd64cf2c-ffbb-49e0-a2e0-053d1df257c8/anitop.user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/entity/Anime.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/entity/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="9" column="120" lean-forward="true" selection-start-line="9" selection-start-column="120" selection-end-line="9" selection-end-column="120" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/adapter/WatchitemAdapter.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="58" column="44" lean-forward="false" selection-start-line="58" selection-start-column="44" selection-end-line="58" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -601,33 +489,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/QueryManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="35" column="20" lean-forward="false" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-          <folding>
-            <marker date="1511042843538" expanded="true" signature="433:447" ph="SELECT * FRO... $" />
-            <marker date="1511042843538" expanded="true" signature="741:755" ph="SELECT * FRO... $" />
-            <marker date="1511042843538" expanded="true" signature="1022:1036" ph="SELECT * FRO... $" />
-            <marker date="1511042843538" expanded="true" signature="1457:1513" ph="INSERT INTO $... " />
-            <marker date="1511042843538" expanded="true" signature="1917:1943" ph="UPDATE ${{$t... " />
-            <marker date="1511042843538" expanded="true" signature="2317:2350" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pdo/StatusPDO.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="42" column="23" lean-forward="true" selection-start-line="42" selection-start-column="23" selection-end-line="42" selection-end-column="23" />
-          <folding>
-            <element signature="e#29#59#0#PHP" expanded="false" />
-            <element signature="e#383#649#0#PHP" expanded="false" />
-            <element signature="e#655#932#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pdo/AnimePDO.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="307">
@@ -636,28 +497,174 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/EncryptionService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="25" lean-forward="false" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/adapter/UserAdapter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" column="5" lean-forward="false" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/service/AuthService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="25" column="54" lean-forward="false" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/ae5a5a77/bd64cf2c-ffbb-49e0-a2e0-053d1df257c8/anitop.user">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/ae5a5a77/bd64cf2c-ffbb-49e0-a2e0-053d1df257c8/anitop.status">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/adapter/StatusAdapter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="42" lean-forward="true" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pdo/StatusPDO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="36" column="60" lean-forward="true" selection-start-line="36" selection-start-column="60" selection-end-line="36" selection-end-column="60" />
+          <folding>
+            <element signature="e#383#649#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/Entity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/Anime.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/entity/Watchitem.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="94" lean-forward="true" selection-start-line="8" selection-start-column="94" selection-end-line="8" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/config/ConfigureSlim.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/EncodingService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
-          <caret line="22" column="62" lean-forward="false" selection-start-line="22" selection-start-column="62" selection-end-line="22" selection-end-column="62" />
+          <caret line="35" column="24" lean-forward="false" selection-start-line="35" selection-start-column="24" selection-end-line="35" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/adapter/WatchitemAdapter.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding>
+            <element signature="e#33#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/QueryManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="46" column="8" lean-forward="false" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+          <folding>
+            <marker date="1511842285679" expanded="true" signature="433:447" ph="SELECT * FRO... $" />
+            <marker date="1511842285679" expanded="true" signature="741:755" ph="SELECT * FRO... $" />
+            <marker date="1511842285679" expanded="true" signature="1022:1036" ph="SELECT * FRO... $" />
+            <marker date="1511842285679" expanded="true" signature="1632:1688" ph="INSERT INTO $... " />
+            <marker date="1511842285679" expanded="true" signature="2136:2162" ph="UPDATE ${{$t... " />
+            <marker date="1511842285679" expanded="true" signature="2528:2561" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pdo/WatchitemPDO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="102" column="0" lean-forward="true" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding>
+            <element signature="e#740#1029#0#PHP" expanded="false" />
+            <element signature="e#3425#3616#0#PHP" expanded="false" />
+            <element signature="e#3622#3806#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="134">
-          <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+        <state relative-caret-position="294">
+          <caret line="165" column="85" lean-forward="false" selection-start-line="165" selection-start-column="85" selection-end-line="165" selection-end-column="85" />
           <folding>
             <element signature="e#36#92#0#PHP" expanded="true" />
-            <element signature="e#310#694#2#PHP" expanded="false" />
-            <element signature="e#724#1447#1#PHP" expanded="false" />
-            <element signature="e#1480#1848#1#PHP" expanded="false" />
-            <element signature="e#2467#2786#1#PHP" expanded="false" />
-            <element signature="e#3148#3444#1#PHP" expanded="false" />
-            <element signature="e#3472#4055#1#PHP" expanded="false" />
-            <element signature="e#4090#4352#1#PHP" expanded="false" />
+            <element signature="e#454#1173#1#PHP" expanded="false" />
+            <element signature="e#1206#1574#1#PHP" expanded="false" />
+            <element signature="e#1588#2086#2#PHP" expanded="false" />
+            <element signature="e#2130#2229#1#PHP" expanded="false" />
+            <element signature="e#2253#2791#1#PHP" expanded="false" />
+            <element signature="e#2816#3135#1#PHP" expanded="false" />
+            <element signature="e#3164#3469#1#PHP" expanded="false" />
+            <element signature="e#3509#3916#1#PHP" expanded="false" />
+            <element signature="e#3944#4533#1#PHP" expanded="false" />
+            <element signature="e#4566#4995#1#PHP" expanded="false" />
+            <element signature="e#5024#5482#1#PHP" expanded="false" />
+            <element signature="e#5521#6163#1#PHP" expanded="false" />
+            <element signature="e#6177#6585#2#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/bd64cf2c-ffbb-49e0-a2e0-053d1df257c8/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/ae5a5a77/bd64cf2c-ffbb-49e0-a2e0-053d1df257c8/anitop.watchlist">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>

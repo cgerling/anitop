@@ -11,8 +11,8 @@ class StatusAdapter implements iAdapter {
      * @return Entity
      */
     public function toEntity($resultset) {
-        $status = new Status($resultset["name"], $resultset["description"]);
-        $status->id = $resultset["statusid"];
+        $status = new Status($resultset['name'], $resultset['description']);
+        $status->id = $resultset['statusid'];
 
         return $status;
     }

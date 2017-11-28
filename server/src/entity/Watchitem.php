@@ -2,11 +2,11 @@
 namespace anitop\entity;
 
 class Watchitem extends Entity {
-    private $anime;
-    private $user;
-    private $status;
+    public $anime;
+    public $user;
+    public $status;
 
-    public function __construct(Anime $anime, User $user, Status $status)
+    public function __construct(Anime $anime = null, User $user = null, Status $status = null)
     {
         $this->anime = $anime;
         $this->user = $user;
