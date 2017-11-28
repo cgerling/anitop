@@ -57,6 +57,7 @@ button {
   background: #363636;
   border: none;
   color: #fff;
+  cursor: pointer;
   font-weight: bold;
   height: 2.5em;
   outline: none;
