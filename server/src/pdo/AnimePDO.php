@@ -13,7 +13,7 @@ class AnimePDO {
     private $tableJoin = array();
 
     public function __construct() {
-        $this->table = "anime";
+        $this->table = 'anime';
         $this->query = new QueryManager($this->table);
         $this->adapter = new AnimeAdapter();
     }
@@ -61,7 +61,7 @@ class AnimePDO {
     public function create(Anime $anime) {
         $values = $this->adapter->toMap($anime);
 
-        unset($values["animeid"]);
+        unset($values['animeid']);
 
         $this->query->insert($values);
     }
