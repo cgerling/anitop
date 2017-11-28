@@ -39,7 +39,7 @@ export default {
       },
       data: {
         popularity: 0,
-        watching: true
+        watching: false
       }
     }
   },
