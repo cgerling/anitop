@@ -55,7 +55,7 @@ export default new Router({
     },
     {
       path: '/search/:term',
-      name: 'Busca',
+      name: 'Resultado da Busca',
       component: Search,
       beforeEnter: AuthGuard
     }
