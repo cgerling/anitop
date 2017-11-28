@@ -4,7 +4,7 @@
       <icon name="search" />
     </button>
     <input v-model="term" type="text" placeholder="Anime">
-    <button class="icon right" @click="close">
+    <button class="icon right" type="reset" @click="close">
       <icon name="times" />
     </button>
   </form>
