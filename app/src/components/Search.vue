@@ -3,7 +3,7 @@
     <button class="icon left" type="submit">
       <icon name="search" />
     </button>
-    <input v-model="term" type="text" placeholder="Anime">
+    <input v-model="term" type="text" placeholder="Buscar anime por nome...">
     <button class="icon right" type="reset" @click="close">
       <icon name="times" />
     </button>
