@@ -35,7 +35,7 @@ export default {
 <style scoped>
 form {
   background: #fff;
-  padding: 1px 2em;
+  padding: 1px 3em;
 }
 
 input[type="text"] {
@@ -55,6 +55,7 @@ input[type="text"] {
   outline: none;
   position: absolute;
   top: 0;
+  width: 3em;
 }
 
 .icon.left {
