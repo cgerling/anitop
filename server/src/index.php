@@ -32,17 +32,18 @@ $app->post('/auth/login', function (Request $request, Response $response) {
 
     $userDb = $userPdo->selectByEmail($user['email']);
 
+    $res = $response->withJson(array(), 401);
     $passwordMatch = $encryptService->verify($user['passwd'], $userDb->password);
     if($passwordMatch) {
         $token = $authService->createToken($userDb);
         $data = array(
             'token' => $token
         );
+        
+        $res = $response->withJson($data);
+    } 
 
-        return $response->withJson($data);
-    } else {
-        return $response->withJson(array(), 401);
-    }
+    return $res;
 });
 
 $app->post('/auth/register', function (Request $request, Response $response) {
