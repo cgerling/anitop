@@ -79,7 +79,28 @@ $app->add(function ($req, $res, $next) {
 
 // TODO: finish it
 $app->get('/search', function (Request $request, Response $response, $args) {
-    return $response->withJson(array());
+    $animePdo = new PDO\AnimePDO();
+
+    $params = $request->getQueryParams();
+
+    $allAnimes = $animePdo->selectByName($params['term'] ?? '');
+
+    $page = $params['page'] !== null && $params['page'] > 0 ? $params['page'] : 1;
+    $size = $params['size'] ?? 30;
+
+    $offset = ($page - 1) * $size;
+
+    $result = array_slice($allAnimes, $offset, $size, true);
+    $animes = \anitop\utils\EncodingService::encodeDoubleArray($result);
+
+    $data = array(
+        'animes' => $animes,
+        'page' => (int) $page,
+        'size' => (int) $size,
+        'total' => count($allAnimes)
+    );
+
+    return $response->withJson($data);
 });
 
 $app->get('/anime', function (Request $request, Response $response) {
