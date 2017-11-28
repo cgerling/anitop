@@ -1,10 +1,11 @@
 import http from './http'
 
-export function obtainAll (page = 1, size) {
-  return http.get('/anime', {
-    page,
-    size
-  })
+export function search (term, page = 1, size = 20) {
+  return http.get(`/search?term=${term}&page=${page}&size=${size}`)
+}
+
+export function obtainAll (page = 1, size = 20) {
+  return http.get(`/anime?page=${page}&size=${size}`)
 }
 
 export function obtain (anime) {
