@@ -13,6 +13,9 @@
         <button @click="toggleSearch">
           <icon name="search" />
         </button>
+        <router-link to="/watchlist" tag="button">
+          <icon name="tv" />
+        </router-link>
         <button @click="logout">
           <icon name="sign-out" />
         </button>
@@ -89,6 +92,7 @@ button {
   border: none;
   color: #4a4a4a;
   cursor: pointer;
+  height: 100%;
   outline: none;
 }
 
