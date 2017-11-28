@@ -5,6 +5,7 @@ import Auth from '@/container/Auth'
 import Home from '@/container/Home'
 import Details from '@/container/Details'
 import Watchlist from '@/container/Watchlist'
+import Search from '@/container/Search'
 
 import Login from '@/components/Login'
 import Register from '@/components/Register'
@@ -50,6 +51,12 @@ export default new Router({
       path: '/watchlist',
       name: 'Assistindo',
       component: Watchlist,
+      beforeEnter: AuthGuard
+    },
+    {
+      path: '/search/:term',
+      name: 'Busca',
+      component: Search,
       beforeEnter: AuthGuard
     }
   ]
