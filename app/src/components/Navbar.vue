@@ -21,7 +21,7 @@
         </button>
       </div>
     </div>
-    <search class="float-bottom" :class="{ 'open': showSearch, 'closed': !showSearch }" :show="showSearch" @search="search" @close="toggleSearch" />
+    <search class="float-bottom" :class="{ 'open': showSearch, 'closed': !showSearch }" :show="showSearch" @search="search" @close="closeSearch" />
   </nav>
 </template>
 <script>
@@ -40,14 +40,18 @@ export default {
   },
   methods: {
     search (term) {
-      // TODO: implement search
-      console.info(term)
+      this.showSearch = false
+
+      this.$router.push(`/search/${term}`)
     },
     logout () {
       this.$emit('logout')
     },
     toggleSearch () {
       this.showSearch = !this.showSearch
+    },
+    closeSearch () {
+      this.showSearch = false
     }
   },
   created () {
