@@ -16,7 +16,7 @@ export default {
   data () {
     return {
       loading: false,
-      isWatching: false
+      isWatching: this.watching
     }
   },
   computed: {
@@ -33,7 +33,7 @@ export default {
 
       let promise
 
-      if (this.watching) {
+      if (this.isWatching) {
         promise = animeService.removeFromWatchlist(this.id).then(() => {
           this.isWatching = false
         })
@@ -48,6 +48,11 @@ export default {
       }).catch(() => {
         this.loading = false
       })
+    }
+  },
+  watch: {
+    watching (to, from) {
+      this.isWatching = to
     }
   }
 }
