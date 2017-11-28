@@ -108,17 +108,20 @@ $app->get('/anime', function (Request $request, Response $response) {
 
     $allAnimes = $animePdo->selectAll();
 
-    $body = $request->getParsedBody();
-    $page = $body['page'] !== null && $body['page'] > 0 ? $body['page'] : 1;
-    $size = $body['size'] ?? 30;
+    $params = $request->getQueryParams();
+    $page = $params['page'] !== null && $params['page'] > 0 ? $params['page'] : 1;
+    $size = $params['size'] ?? 30;
 
-    $page = ($page - 1) * 30;
+    $offset = ($page - 1) * $size;
 
-    $result = array_slice($allAnimes, $page, $size, true);
+    $result = array_slice($allAnimes, $offset, $size, true);
     $animes = \anitop\utils\EncodingService::encodeDoubleArray($result);
 
     $data = array(
-        'animes' => $animes
+        'animes' => $animes,
+        'page' => (int) $page,
+        'size' => (int) $size,
+        'total' => count($allAnimes)
     );
 
     return $response->withJson($data);
