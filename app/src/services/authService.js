@@ -9,6 +9,7 @@ function updateAuhorization () {
 }
 
 function saveToken (token) {
+  if (!token) return
   window.localStorage.setItem(storageTokenKey, JSON.stringify(token))
 }
 

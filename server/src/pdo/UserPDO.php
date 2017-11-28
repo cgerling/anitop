@@ -49,7 +49,7 @@ class UserPDO {
         $values = $this->adapter->toMap($user);
 
         unset($values['userid']);
-
+        
         $this->query->insert($values);
     }
 

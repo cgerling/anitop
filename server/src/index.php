@@ -52,9 +52,15 @@ $app->post('/auth/register', function (Request $request, Response $response) {
 
     $body = $request->getParsedBody();
     $passwd = $encryptService->encrypt($body['password']);
-    $newUser = new \anitop\entity\User($body['name'], $body['email'], $passwd, new DateTime());
+    $newUser = new \anitop\entity\User($body['name'], $body['email'], $passwd);
 
     $userPdo->create($newUser);
+
+    $data = array(
+        'user' => $newUser
+    );
+
+    return $response->withJson($data);
 });
 
 $app->add(function ($req, $res, $next) {
@@ -78,7 +84,6 @@ $app->add(function ($req, $res, $next) {
     return $next($request, $res);
 });
 
-// TODO: finish it
 $app->get('/search', function (Request $request, Response $response, $args) {
     $animePdo = new PDO\AnimePDO();
 
