@@ -3,14 +3,14 @@
     <div class="exibithion">
       <p class="name">{{anime.name}}</p>
       <div class="columns is-centered is-mobile is-marginless is-variable is-1">
-        <anime-poster class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop" :url="anime.url" />
+        <anime-poster class="column is-half-mobile is-one-third-tablet is-one-quarter-desktop" :url="anime.image" />
       </div>
-      <anime-popularity :quantity="anime.popularity">
-        <anime-watch :watching="anime.watching" slot="button" />
+      <anime-popularity :quantity="data.popularity">
+        <anime-watch :id="anime.id" :watching="data.watching" slot="button" />
       </anime-popularity>
     </div>
     <p class="details">
-      {{anime.author}} • {{anime.publisher}}
+      {{anime.studio}} • {{anime.publisher}}
     </p>
     <p class="description">
       {{anime.description}}
@@ -22,36 +22,53 @@ import AnimePoster from '../components/AnimePoster'
 import AnimePopularity from '../components/AnimePopularity'
 import AnimeWatch from '../components/AnimeWatch'
 
+import * as animeService from '../services/animeService.js'
+
 export default {
   name: 'Details',
   components: { AnimePoster, AnimePopularity, AnimeWatch },
   data () {
     return {
       anime: {
-        name: 'Naruto Shipudden',
-        seasonRelease: '2000-05-19',
-        author: 'Masashi Kishimoto',
-        publisher: 'Shonen\'s Jump',
-        genres: ['Drama', 'Scream'],
-        url: 'http://www.gstatic.com/tv/thumb/tvbanners/7842736/p7842736_b_v8_ab.jpg',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus condimentum, arcu vitae faucibus efficitur, lorem tortor pellentesque nunc, nec blandit nunc metus ut lacus. Donec egestas porttitor velit vel lobortis. Nulla porttitor mi et justo vehicula, a ornare tortor tristique. Phasellus lobortis imperdiet aliquam. Aliquam malesuada scelerisque enim, eget lacinia tellus euismod quis. Proin finibus nunc vel diam mattis, at vulputate augue pharetra. Nam gravida laoreet ante, non gravida orci. Proin interdum nec lacus sed aliquam. Maecenas pulvinar sapien odio, a interdum eros interdum dapibus. Curabitur vel ultricies ante. Nulla at sollicitudin nunc. Etiam ullamcorper neque sit amet fringilla sollicitudin. Cras at nibh erat. Nunc ut ex luctus, ullamcorper massa eu, finibus erat. Vestibulum nibh libero, vestibulum non pellentesque et, elementum sit amet tortor. Donec sit amet velit dapibus, dapibus neque eu, eleifend dui. Phasellus vitae ullamcorper eros. Quisque at elit magna. Quisque gravida feugiat sagittis. Curabitur vitae lacus consequat, fermentum urna quis, vestibulum dolor. Maecenas nunc leo, porta vel augue malesuada, fermentum blandit ipsum. Nam non cursus enim. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur dapibus ut ante in pellentesque. Sed mattis semper nunc. Morbi non augue elementum, tempus felis vel, iaculis dui. Fusce faucibus maximus vestibulum. Nulla a volutpat dolor, id fermentum ex. Donec sit amet lorem lectus. Duis iaculis risus tellus, quis congue sem varius sit amet. Morbi nec ante id sapien malesuada maximus a sit amet augue.',
-        popularity: 50000,
+        id: 0,
+        name: '',
+        author: '',
+        studio: '',
+        image: '',
+        description: ''
+      },
+      data: {
+        popularity: 0,
         watching: true
       }
     }
   },
   methods: {
-    obtainAnime (id) {
-      console.log(id)
+    obtainAnimeInfo () {
+      animeService.obtain(this.id).then(({ data }) => {
+        this.anime = data.anime
+      })
+
+      animeService.obtainPopularity(this.id).then(({ data }) => {
+        this.data.popularity = data.popularity
+      })
+
+      animeService.watching(this.id).then(({ data }) => {
+        this.data.watching = data.watching
+      })
     }
   },
   created () {
     const { id } = this.$route.params
-    this.obtainAnime(id)
+    this.id = id
+
+    this.obtainAnimeInfo()
   },
   beforeRouteUpdate (to, from, next) {
     const { id } = to.params
-    this.obtainAnime(id)
+    this.id = id
+
+    this.obtainAnimeInfo()
 
     next()
   }

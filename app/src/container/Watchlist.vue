@@ -8,21 +8,21 @@
 import AnimeList from '../components/AnimeList'
 import Message from '../components/Message'
 
+import * as animeService from '../services/animeService.js'
+
 export default {
   name: 'Watchlist',
   components: { AnimeList, Message },
   data () {
     return {
-      animes: [{
-        name: 'Naruto Shippuden',
-        url: 'http://www.gstatic.com/tv/thumb/tvbanners/7842736/p7842736_b_v8_ab.jpg'
-      },
-      {
-        name: 'Fullmetal Alchemist: Brotherhood',
-        url: 'http://www.gstatic.com/tv/thumb/tvbanners/9065115/p9065115_b_v8_aa.jpg'
-      }],
-      message: 'Tu não tem nada, seu lixo'
+      animes: [],
+      message: 'Você ainda não adicionou animes à esta lista.'
     }
+  },
+  created () {
+    animeService.obtainWatchlist().then(({ data }) => {
+      this.animes = data.watchlist
+    })
   }
 }
 </script>
