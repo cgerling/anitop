@@ -1,5 +1,5 @@
 <template>
-  <button :class="{ 'watching': watching, 'not-watching': !watching }">
+  <button @click="toggleWatching()" :class="{ 'watching': isWatching, 'not-watching': !isWatching }" :disabled="loading">
     <icon :name="iconName" />
     {{text}}
   </button>
@@ -7,16 +7,47 @@
 <script>
 import Icon from './Icon'
 
+import * as animeService from '../services/animeService.js'
+
 export default {
   name: 'AnimeWatch',
   components: { Icon },
-  props: ['watching'],
+  props: ['watching', 'id'],
+  data () {
+    return {
+      loading: false,
+      isWatching: false
+    }
+  },
   computed: {
     iconName () {
-      return this.watching ? 'minus' : 'plus'
+      return this.isWatching ? 'minus' : 'plus'
     },
     text () {
-      return this.watching ? 'Remover' : 'Assistir'
+      return this.isWatching ? 'Remover' : 'Assistir'
+    }
+  },
+  methods: {
+    toggleWatching () {
+      this.loading = true
+
+      let promise
+
+      if (this.watching) {
+        promise = animeService.removeFromWatchlist(this.id).then(() => {
+          this.isWatching = false
+        })
+      } else {
+        promise = animeService.addToWatchlist(this.id).then(() => {
+          this.isWatching = true
+        })
+      }
+
+      promise.then(() => {
+        this.loading = false
+      }).catch(() => {
+        this.loading = false
+      })
     }
   }
 }
